@@ -1,0 +1,94 @@
+// generate using "dot maus_process_diagram.dot -Tpdf -o maus_process_diagram.pdf"
+
+
+digraph G {
+  subgraph cluster_mc {
+    label = < <B>Simulation</B> >
+    labeljust = "l"
+
+    beam_generation [shape=record, label="{Beam generation}"]
+    simulation [shape=record, label="{Geant4 Simulation}"]
+    tracker_mc_digitisation [shape=record, color="red", label="{Tracker Digitization}"]
+    tracker_mc_noise [shape=record, color="red", label="{Tracker Noise}"]
+    tof_mc_digitisation [shape=record, color="blue", label="{TOF Digitization}"]
+    kl_mc_digitisation [shape=record, color = "orange", label="{KL Digitization}"]
+    emr_mc_digitisation [shape=record, color = "purple", label="{EMR Digitization}"]
+    ckov_mc_digitisation [shape=record, color = "green", label="{Ckov Digitization}"]
+    // mc_trigger [shape=record, color=gray, fontcolor=gray, label="{MC Trigger}"]
+  }
+
+  subgraph cluster_raw {
+    label = < <B>Real Data</B> >
+    labeljust = "l"
+
+    raw_data [shape=record, label="{Raw data unpacking}"]
+    tof_digitisation [shape=record, color="blue", label="{TOF Digits}"]
+    tracker_digitisation [shape=record, color="red", label="{Tracker Digits}"]
+    kl_digitisation [shape=record, color = "orange", label="{KL Digits}"]
+    emr_digitisation [shape=record, color = "purple", label="{EMR Digits}"]
+    ckov_digitisation [shape=record, color = "green", label="{Ckov Digits}"]
+  }
+
+  subgraph cluster_recon {
+    label = < <B>Reconstruction</B> >
+    labeljust = "l"
+    labelloc = "b"
+
+    tof_slab_hit [shape=record, color="blue", label="{TOF Slab Hit}"]
+    tof_space_point [shape=record, color="blue", label="{TOF Space Point}"]
+
+    tracker_cluster_finding [shape=record, color="red", label="{Tracker Cluster Finding}"]
+    tracker_space_point [shape=record, color="red", label="{Tracker Space Point}"]
+    tracker_pattern_recognition [shape=record, color="red", label="{Tracker Pattern Recognition}"]
+    tracker_kalman_filter [shape=record, color="red", label="{Tracker Kalman Filter}"]
+
+    kl_cell_hits [shape=record, color = "orange", label="{KL Cell Hit}"]
+
+    emr_space_point [shape=record, color = "purple", label="{EMR Space Point}"]
+    emr_track [shape=record, color = "purple", label="{EMR Track Fit}"]
+
+    global_pid [shape=record, label="{Global Particle Identification}"]
+    global_track_fit [shape=record, label="{Global track fit}"]
+  }
+
+  beam_generation -> simulation
+
+    simulation -> tracker_mc_digitisation
+    tracker_mc_noise -> tracker_mc_digitisation [color="red"]
+      tracker_mc_digitisation -> tracker_cluster_finding [color="red"]
+    raw_data -> tracker_digitisation
+      tracker_digitisation -> tracker_cluster_finding [color="red"]
+        tracker_cluster_finding -> tracker_space_point -> tracker_pattern_recognition -> tracker_kalman_filter [color="red"]
+        tracker_cluster_finding -> tracker_kalman_filter [color="red"]
+          tracker_kalman_filter -> global_track_fit [color="red"]
+
+  simulation -> tof_mc_digitisation
+    tof_mc_digitisation -> tof_slab_hit [color = "blue"]
+  raw_data -> tof_digitisation
+    tof_digitisation -> tof_slab_hit [color = "blue"]
+      tof_slab_hit -> tof_space_point [color = "blue"]
+        tof_space_point -> global_track_fit [color = "blue"]
+
+  simulation -> kl_mc_digitisation
+    kl_mc_digitisation -> kl_cell_hits [color = "orange"]
+  raw_data -> kl_digitisation
+    kl_digitisation -> kl_cell_hits [color = "orange"]
+      kl_cell_hits -> global_track_fit [color = "orange"]
+
+  simulation -> emr_mc_digitisation
+  raw_data -> emr_digitisation
+    emr_mc_digitisation -> emr_space_point [color = "purple"]
+    emr_digitisation -> emr_space_point [color = "purple"]
+      emr_space_point-> emr_track [color = "purple"]
+        emr_track -> global_track_fit [color = "purple"]
+
+  simulation -> ckov_mc_digitisation
+    ckov_mc_digitisation -> global_track_fit [color = "green"]
+  raw_data -> ckov_digitisation
+    ckov_digitisation -> global_track_fit [color = "green"]
+
+  global_track_fit -> global_pid
+}
+
+
+

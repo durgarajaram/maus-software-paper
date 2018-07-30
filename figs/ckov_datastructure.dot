@@ -1,0 +1,14 @@
+// generate using "dot ckov_datastructure.dot -Tpdf -o ckov_datastructure.pdf"
+
+digraph G {
+  node [shape=record];
+  ckov_event [shape=record, label="{CkovEvent|ckov_event}"]
+      ckov_event_item_ckov_digits [shape=record, label="{CkovDigitArray|ckov_digits}"]
+        ckov_event_item_ckov_digits_array_item [shape=record, label="{CkovDigit|[]}"]
+        ckov_event_item_ckov_digits_array_item_A [shape=record, label="{CkovA|A}"]
+        ckov_event_item_ckov_digits_array_item_B [shape=record, label="{CkovB|B}"]
+              ckov_event -> ckov_event_item_ckov_digits
+      ckov_event_item_ckov_digits -> ckov_event_item_ckov_digits_array_item
+        ckov_event_item_ckov_digits_array_item -> ckov_event_item_ckov_digits_array_item_A
+        ckov_event_item_ckov_digits_array_item -> ckov_event_item_ckov_digits_array_item_B
+}

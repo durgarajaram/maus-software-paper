@@ -1,0 +1,44 @@
+// generate using "dot top_level.dot -Tpdf -o top_level.pdf"
+
+digraph G {
+  graph [pad="0.5", nodesep="0.1", ranksep="1.2"];
+  node [shape=record];
+  margin=0;
+  root_item [shape=none, label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+                                 <TR><TD PORT="f0" SIDES="B"><B>MAUSEvent</B></TD></TR>
+                                 <TR><TD PORT="f1" ALIGN="LEFT" SIDES="LR">+ virtual GetEvent() : T*</TD></TR>
+                                 <TR><TD PORT="f2" ALIGN="LEFT" SIDES="LR">+ virtual SetEvent(T*) : void </TD></TR>
+                                </TABLE>>]
+  data [shape=none, label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+                                 <TR><TD PORT="f0" SIDES="B"><B>Data</B></TD></TR>
+                                 <TR><TD PORT="f1" ALIGN="LEFT" SIDES="LR">- virtual GetEvent() : Spill*</TD></TR>
+                                 <TR><TD PORT="f2" ALIGN="LEFT" SIDES="LR">- virtual SetEvent(Spill*) : void </TD></TR>
+                           </TABLE>>]
+  jh_data [shape=none, label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+                                 <TR><TD PORT="f0" SIDES="B"><B>JobHeaderData</B></TD></TR>
+                                 <TR><TD PORT="f1" ALIGN="LEFT" SIDES="LR">- virtual GetEvent() : JobHeader*</TD></TR>
+                                 <TR><TD PORT="f2" ALIGN="LEFT" SIDES="LR">- virtual SetEvent(JobHeader*) : void </TD></TR>
+                              </TABLE>>]
+  jf_data [shape=none, label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+                                 <TR><TD PORT="f0" SIDES="B"><B>JobFooterData</B></TD></TR>
+                                 <TR><TD PORT="f1" ALIGN="LEFT" SIDES="LR">- virtual GetEvent() : JobFooter*</TD></TR>
+                                 <TR><TD PORT="f2" ALIGN="LEFT" SIDES="LR">- virtual SetEvent(JobFooter*) : void </TD></TR>
+                              </TABLE>>]
+  rh_data [shape=none, label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+                                 <TR><TD PORT="f0" SIDES="B"><B>RunHeaderData</B></TD></TR>
+                                 <TR><TD PORT="f1" ALIGN="LEFT" SIDES="LR">- virtual GetEvent() : RunHeader*</TD></TR>
+                                 <TR><TD PORT="f2" ALIGN="LEFT" SIDES="LR">- virtual SetEvent(RunHeader*) : void </TD></TR>
+                              </TABLE>>]
+  rf_data [shape=none, label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+                                 <TR><TD PORT="f0" SIDES="B"><B>RunFooterData</B></TD></TR>
+                                 <TR><TD PORT="f1" ALIGN="LEFT" SIDES="LR">- virtual GetEvent() : RunFooter*</TD></TR>
+                                 <TR><TD PORT="f2" ALIGN="LEFT" SIDES="LR">- virtual SetEvent(RunFooter*) : void </TD></TR>
+                              </TABLE>>]
+
+  root_item -> data [label = "public \n <<bind>> \n T -> Spill", arrowtail = "empty", dir = "back"]
+  root_item -> rh_data [label = "public \n <<bind>> \n T -> RunHeader", arrowtail = "empty", dir = "back"]
+  root_item -> rf_data [label = "public \n <<bind>> \n T -> RunFooter", arrowtail = "empty", dir = "back"]
+  root_item -> jh_data [label = "public \n <<bind>> \n T -> JobHeader", arrowtail = "empty", dir = "back"]
+  root_item -> jf_data [label = "public \n <<bind>> \n T -> JobFooter", arrowtail = "empty", dir = "back"]
+
+}

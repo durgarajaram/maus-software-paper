@@ -1,0 +1,18 @@
+// generate using "dot kl_datastructure.dot -Tpdf -o kl_datastructure.pdf"
+
+digraph G {
+  node [shape=record];
+  kl_event [shape=record, label="{KLEvent|kl_event}"]
+      kl_event_item_kl_digits [shape=record, label="{KLEventDigit|kl_digits}"]
+        kl_event_item_kl_digits_kl [shape=record, label="{KLDigitArray|kl}"]
+        kl_event_item_kl_digits_kl_array_item [shape=record, label="{KLDigit|[]}"]
+      kl_event_item_kl_cell_hits [shape=record, label="{KLEventCellHit|kl_cell_hits}"]
+        kl_event_item_kl_cell_hits_kl [shape=record, label="{KLCellHitArray|kl}"]
+        kl_event_item_kl_cell_hits_kl_array_item [shape=record, label="{KLCellHit|[]}"]
+      kl_event -> kl_event_item_kl_digits
+      kl_event_item_kl_digits -> kl_event_item_kl_digits_kl
+        kl_event_item_kl_digits_kl -> kl_event_item_kl_digits_kl_array_item
+      kl_event -> kl_event_item_kl_cell_hits
+      kl_event_item_kl_cell_hits -> kl_event_item_kl_cell_hits_kl
+        kl_event_item_kl_cell_hits_kl -> kl_event_item_kl_cell_hits_kl_array_item
+}

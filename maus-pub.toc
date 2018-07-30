@@ -1,0 +1,26 @@
+\contentsline {section}{\numberline {1}Introduction}{1}
+\contentsline {subsection}{\numberline {1.1}The MICE experiment}{1}
+\contentsline {subsection}{\numberline {1.2}Software Requirements}{2}
+\contentsline {section}{\numberline {2}MAUS}{3}
+\contentsline {subsection}{\numberline {2.1}Code design}{3}
+\contentsline {subsection}{\numberline {2.2}Data Structure}{6}
+\contentsline {subsubsection}{\numberline {2.2.1}Physics Data}{6}
+\contentsline {subsubsection}{\numberline {2.2.2}Top Level Data Organisation}{10}
+\contentsline {subsection}{\numberline {2.3}Data Flow}{10}
+\contentsline {subsection}{\numberline {2.4}Testing}{10}
+\contentsline {section}{\numberline {3}Monte Carlo}{11}
+\contentsline {subsection}{\numberline {3.1}Beam generation}{11}
+\contentsline {subsection}{\numberline {3.2}GEANT4}{12}
+\contentsline {subsection}{\numberline {3.3}Geometry}{12}
+\contentsline {subsection}{\numberline {3.4}Tracking, field maps and beam optics}{13}
+\contentsline {subsection}{\numberline {3.5}Detector response and digitization}{13}
+\contentsline {section}{\numberline {4}Reconstruction}{14}
+\contentsline {subsection}{\numberline {4.1}Time of flight}{14}
+\contentsline {subsection}{\numberline {4.2}Scintillating fiber trackers}{14}
+\contentsline {subsection}{\numberline {4.3}KL calorimeter}{15}
+\contentsline {subsection}{\numberline {4.4}Electron-muon ranger}{15}
+\contentsline {subsection}{\numberline {4.5}Cherenkov}{15}
+\contentsline {subsection}{\numberline {4.6}Global reconstruction}{15}
+\contentsline {subsubsection}{\numberline {4.6.1}Global Track Matching}{15}
+\contentsline {subsubsection}{\numberline {4.6.2}Global PID}{16}
+\contentsline {subsection}{\numberline {4.7}Online reconstruction}{16}

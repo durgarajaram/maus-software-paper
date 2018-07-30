@@ -1,0 +1,94 @@
+// generate using "dot mc_datastructure.dot -Tpdf -o mc_datastructure.pdf"
+
+digraph G {
+  node [shape=record];
+  mc_events [shape=record, label="{MCEventArray|mc_events}"]
+    mc_events_array_item [shape=record, label="{MCEvent|[]}"]
+      mc_events_array_item_ckov_hits [shape=record, label="{CkovHitArray|ckov_hits}"]
+        mc_events_array_item_ckov_hits_array_item [shape=record, label="{CkovHit|[]}"]
+          mc_events_array_item_ckov_hits_array_item_channel_id [shape=record, label="{CkovChannelID|channel_id}"]
+      mc_events_array_item_kl_hits [shape=record, label="{KLHitArray|kl_hits}"]
+        mc_events_array_item_kl_hits_array_item [shape=record, label="{KLHit|[]}"]
+          mc_events_array_item_kl_hits_array_item_channel_id [shape=record, label="{KLChannelID|channel_id}"]
+      mc_events_array_item_emr_hits [shape=record, label="{EMRHitArray|kl_hits}"]
+        mc_events_array_item_emr_hits_array_item [shape=record, label="{EMRHit|[]}"]
+          mc_events_array_item_emr_hits_array_item_channel_id [shape=record, label="{EMRChannelID|channel_id}"]
+      mc_events_array_item_primary [shape=record, label="{Primary|primary}"]
+        // mc_events_array_item_primary_momentum [shape=record, label="{ThreeVector|momentum}"]
+        // mc_events_array_item_primary_position [shape=record, label="{ThreeVector|position}"]
+      mc_events_array_item_scifi_hits [shape=record, label="{SciFiHitArray|scifi_hits}"]
+        mc_events_array_item_scifi_hits_array_item [shape=record, label="{SciFiHit|[]}"]
+          mc_events_array_item_scifi_hits_array_item_channel_id [shape=record, label="{SciFiChannelID|channel_id}"]
+        // mc_events_array_item_scifi_hits_array_item_momentum [shape=record, label="{ThreeVector|momentum}"]
+        // mc_events_array_item_scifi_hits_array_item_position [shape=record, label="{ThreeVector|position}"]
+      mc_events_array_item_special_virtual_hits [shape=record, label="{SpecialVirtualHitArray|special_virtual_hits}"]
+      mc_events_array_item_special_virtual_hits_array_item [shape=record, label="{SpecialVirtualHit|[]}"]
+        mc_events_array_item_special_virtual_hits_array_item_channel_id [shape=record, label="{SpecialVirtualChannelID|channel_id}"]
+        // mc_events_array_item_special_virtual_hits_array_item_momentum [shape=record, label="{ThreeVector|momentum}"]
+        // mc_events_array_item_special_virtual_hits_array_item_position [shape=record, label="{ThreeVector|position}"]
+      mc_events_array_item_tracks_array_item_steps [shape=record, label="{StepArray|steps}"]
+        mc_events_array_item_tracks_array_item_steps_array_item [shape=record, label="{Step|[]}"]
+          // mc_events_array_item_tracks_array_item_steps_array_item_momentum [shape=record, label="{ThreeVector|momentum}"]
+          // mc_events_array_item_tracks_array_item_steps_array_item_position [shape=record, label="{ThreeVector|position}"]
+      mc_events_array_item_tof_hits [shape=record, label="{TofHitArray|tof_hits}"]
+      mc_events_array_item_tof_hits_array_item [shape=record, label="{TofHit|[]}"]
+        mc_events_array_item_tof_hits_array_item_channel_id [shape=record, label="{TOFChannelID|channel_id}"]
+        // mc_events_array_item_tof_hits_array_item_momentum [shape=record, label="{ThreeVector|momentum}"]
+        // mc_events_array_item_tof_hits_array_item_position [shape=record, label="{ThreeVector|position}"]
+      mc_events_array_item_tracks [shape=record, label="{TrackArray|tracks}"]
+      mc_events_array_item_tracks_array_item [shape=record, label="{Track|[]}"]
+        // mc_events_array_item_tracks_array_item_initial_momentum [shape=record, label="{ThreeVector|initial_momentum}"]
+        // mc_events_array_item_tracks_array_item_initial_position [shape=record, label="{ThreeVector|initial_position}"]
+        // mc_events_array_item_tracks_array_item_final_momentum [shape=record, label="{ThreeVector|final_momentum}"]
+        // mc_events_array_item_tracks_array_item_final_position [shape=record, label="{ThreeVector|final_position}"]
+      mc_events_array_item_virtual_hits [shape=record, label="{VirtualHitArray|virtual_hits}"]
+        mc_events_array_item_virtual_hits_array_item [shape=record, label="{VirtualHit|[]}"]
+          // mc_events_array_item_virtual_hits_array_item_momentum [shape=record, label="{ThreeVector|momentum}"]
+          // mc_events_array_item_virtual_hits_array_item_position [shape=record, label="{ThreeVector|position}"]
+          // mc_events_array_item_virtual_hits_array_item_b_field [shape=record, label="{ThreeVector|b_field}"]
+          // mc_events_array_item_virtual_hits_array_item_e_field [shape=record, label="{ThreeVector|e_field}"]
+    mc_events -> mc_events_array_item
+    mc_events_array_item -> mc_events_array_item_primary
+    mc_events_array_item -> mc_events_array_item_special_virtual_hits
+    mc_events_array_item -> mc_events_array_item_ckov_hits
+    mc_events_array_item -> mc_events_array_item_kl_hits
+    mc_events_array_item -> mc_events_array_item_emr_hits
+    mc_events_array_item -> mc_events_array_item_tof_hits
+    mc_events_array_item -> mc_events_array_item_virtual_hits
+    mc_events_array_item -> mc_events_array_item_scifi_hits
+    mc_events_array_item -> mc_events_array_item_tracks
+      // mc_events_array_item_primary -> mc_events_array_item_primary_momentum
+      // mc_events_array_item_primary -> mc_events_array_item_primary_position
+      mc_events_array_item_ckov_hits -> mc_events_array_item_ckov_hits_array_item
+        mc_events_array_item_ckov_hits_array_item -> mc_events_array_item_ckov_hits_array_item_channel_id
+      mc_events_array_item_kl_hits -> mc_events_array_item_kl_hits_array_item
+        mc_events_array_item_kl_hits_array_item -> mc_events_array_item_kl_hits_array_item_channel_id
+      mc_events_array_item_emr_hits -> mc_events_array_item_emr_hits_array_item
+        mc_events_array_item_emr_hits_array_item -> mc_events_array_item_emr_hits_array_item_channel_id
+      mc_events_array_item_scifi_hits -> mc_events_array_item_scifi_hits_array_item
+        mc_events_array_item_scifi_hits_array_item -> mc_events_array_item_scifi_hits_array_item_channel_id
+      // mc_events_array_item_scifi_hits_array_item -> mc_events_array_item_scifi_hits_array_item_momentum
+      // mc_events_array_item_scifi_hits_array_item -> mc_events_array_item_scifi_hits_array_item_position
+      mc_events_array_item_special_virtual_hits -> mc_events_array_item_special_virtual_hits_array_item
+      mc_events_array_item_special_virtual_hits_array_item -> mc_events_array_item_special_virtual_hits_array_item_channel_id
+      // mc_events_array_item_special_virtual_hits_array_item -> mc_events_array_item_special_virtual_hits_array_item_momentum
+      // mc_events_array_item_special_virtual_hits_array_item -> mc_events_array_item_special_virtual_hits_array_item_position
+      mc_events_array_item_tof_hits -> mc_events_array_item_tof_hits_array_item
+      mc_events_array_item_tof_hits_array_item -> mc_events_array_item_tof_hits_array_item_channel_id
+      // mc_events_array_item_tof_hits_array_item -> mc_events_array_item_tof_hits_array_item_momentum
+      // mc_events_array_item_tof_hits_array_item -> mc_events_array_item_tof_hits_array_item_position
+      mc_events_array_item_virtual_hits -> mc_events_array_item_virtual_hits_array_item
+      // mc_events_array_item_virtual_hits_array_item -> mc_events_array_item_virtual_hits_array_item_momentum
+      // mc_events_array_item_virtual_hits_array_item -> mc_events_array_item_virtual_hits_array_item_position
+      // mc_events_array_item_virtual_hits_array_item -> mc_events_array_item_virtual_hits_array_item_e_field
+      // mc_events_array_item_virtual_hits_array_item -> mc_events_array_item_virtual_hits_array_item_b_field
+      mc_events_array_item_tracks -> mc_events_array_item_tracks_array_item
+      // mc_events_array_item_tracks_array_item -> mc_events_array_item_tracks_array_item_initial_momentum
+      // mc_events_array_item_tracks_array_item -> mc_events_array_item_tracks_array_item_initial_position
+      // mc_events_array_item_tracks_array_item -> mc_events_array_item_tracks_array_item_final_momentum
+      // mc_events_array_item_tracks_array_item -> mc_events_array_item_tracks_array_item_final_position
+      mc_events_array_item_tracks_array_item -> mc_events_array_item_tracks_array_item_steps
+        mc_events_array_item_tracks_array_item_steps -> mc_events_array_item_tracks_array_item_steps_array_item
+        // mc_events_array_item_tracks_array_item_steps_array_item -> mc_events_array_item_tracks_array_item_steps_array_item_position
+        // mc_events_array_item_tracks_array_item_steps_array_item -> mc_events_array_item_tracks_array_item_steps_array_item_momentum
+}

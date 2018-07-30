@@ -1,0 +1,74 @@
+// generate using "dot api.dot -Tpdf -o api.pdf"
+
+digraph G {
+  margin = 0.2
+  graph [pad="0.5", nodesep="0.7", ranksep="0.8"];
+  node [shape=record];
+  root_item [shape=none, label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+                                 <TR><TD PORT="f0" SIDES="B"><B>IModule</B></TD></TR>
+                                 <TR><TD PORT="f1" ALIGN="LEFT" SIDES="LR">+ virtual birth(string) : void </TD></TR>
+                                 <TR><TD PORT="f2" ALIGN="LEFT" SIDES="LR">+ virtual death() : void </TD></TR>
+                                </TABLE>>]
+  imap[shape=none, label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+                           <TR><TD PORT="f0" SIDES="B"><B>IMap</B></TD></TR>
+                           <TR><TD PORT="f1" ALIGN="LEFT" SIDES="LR">+ process(T*) : void </TD></TR>
+                           <TR><TD PORT="f2" ALIGN="LEFT" SIDES="LR">+ virtual process_pyobj(PyObject*) : PyObject* </TD></TR>
+                         </TABLE>>]
+  module_base [shape=none, label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+                                   <TR><TD PORT="f0" SIDES="B"><B>ModuleBase</B></TD></TR>
+                                   <TR><TD PORT="f1" ALIGN="LEFT" SIDES="LR">+ birth(string) </TD></TR>
+                                   <TR><TD PORT="f2" ALIGN="LEFT" SIDES="LR">+ death() : void </TD></TR>
+                                   <TR><TD PORT="f3" ALIGN="LEFT" SIDES="LR">- virtual birth(string) : void </TD></TR>
+                                   <TR><TD PORT="f4" ALIGN="LEFT" SIDES="LR">- virtual death() : void </TD></TR>
+                                </TABLE>>]
+  ireduce[shape=none, label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+                           <TR><TD PORT="f0" SIDES="B"><B>IReduce</B></TD></TR>
+                           <TR><TD PORT="f1" ALIGN="LEFT" SIDES="LR">+ process(T*) : void </TD></TR>
+                           <TR><TD PORT="f2" ALIGN="LEFT" SIDES="LR">+ virtual process_pyobj(PyObject*) : PyObject* </TD></TR>
+                         </TABLE>>]
+  map_base [shape=none, label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+                                <TR><TD PORT="f0" SIDES="B"><B>MapBase</B></TD></TR>
+                                <TR><TD PORT="f1" ALIGN="LEFT" SIDES="LR">+ _process(T*) : void </TD></TR>
+                                <TR><TD PORT="f2" ALIGN="LEFT" SIDES="LR">- process(T*) : void </TD></TR>
+                                <TR><TD PORT="f3" ALIGN="LEFT" SIDES="LR">- process_pyobj(PyObject*) : PyObject* </TD></TR>
+                              </TABLE>>]
+  reduce_base [shape=none, label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+                                <TR><TD PORT="f0" SIDES="B"><B>ReduceBase</B></TD></TR>
+                                <TR><TD PORT="f1" ALIGN="LEFT" SIDES="LR">+ _process(T*) : void </TD></TR>
+                                <TR><TD PORT="f2" ALIGN="LEFT" SIDES="LR">- process(T*) : void </TD></TR>
+                                <TR><TD PORT="f3" ALIGN="LEFT" SIDES="LR">- process_pyobj(PyObject*) : PyObject* </TD></TR>
+                              </TABLE>>]
+  my_map [shape=none, label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+                              <TR><TD PORT="f0" SIDES="B"><B>MyMap</B></TD></TR>
+                              <TR><TD PORT="f1" ALIGN="LEFT" SIDES="LR">- _birth(string) : void </TD></TR>
+                              <TR><TD PORT="f2" ALIGN="LEFT" SIDES="LR">- _death() : void </TD></TR>
+                              <TR><TD PORT="f3" ALIGN="LEFT" SIDES="LR">- _process(T*) : void </TD></TR>
+                            </TABLE>>]
+  my_reduce [shape=none, label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+                              <TR><TD PORT="f0" SIDES="B"><B>MyReduce</B></TD></TR>
+                              <TR><TD PORT="f1" ALIGN="LEFT" SIDES="LR">- _birth(string) : void </TD></TR>
+                              <TR><TD PORT="f2" ALIGN="LEFT" SIDES="LR">- _death() : void </TD></TR>
+                              <TR><TD PORT="f3" ALIGN="LEFT" SIDES="LR">- _process(T*) : void </TD></TR>
+                            </TABLE>>]
+  ispecialised_map [shape=none, label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+                                        <TR><TD PORT="f0" SIDES="B"><B>ISpecialisedMap</B></TD></TR>
+                                        <TR><TD PORT="f1" SIDES="LR"> </TD></TR>
+                                      </TABLE>>]
+  specialised_map_base [shape=none, label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+                                            <TR><TD PORT="f0" SIDES="B"><B>SpecialisedMapBase</B></TD></TR>
+                                            <TR><TD PORT="f1" SIDES="LR"> </TD></TR>
+                                          </TABLE>>]
+
+  root_item -> imap [label = " public virtual", arrowtail = "empty", dir = "back"]
+  root_item -> ireduce [label = " public virtual", arrowtail = "empty", dir = "back"]
+  root_item -> module_base [label = " public virtual", arrowtail = "empty", dir = "back" ]
+    imap -> map_base [label = " public virtual", arrowtail = "empty", dir = "back"]
+    ireduce -> reduce_base [label = " public virtual", arrowtail = "empty", dir = "back"]
+    module_base -> map_base [label = " public", arrowtail = "empty", dir = "back"]
+    module_base -> reduce_base [label = " public", arrowtail = "empty", dir = "back"]
+      map_base -> my_map [label = " public", arrowtail = "empty", dir = "back"]
+      reduce_base -> my_reduce [label = " public", arrowtail = "empty", dir = "back"]
+    imap -> ispecialised_map [label = " public virtual", arrowtail = "empty", dir = "back"]
+      ispecialised_map -> specialised_map_base [label = " public virtual", arrowtail = "empty", dir = "back"]
+      map_base -> specialised_map_base [label = " public", arrowtail = "empty", dir = "back"]
+}

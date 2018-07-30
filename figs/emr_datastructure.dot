@@ -1,0 +1,13 @@
+// generate using "dot emr_datastructure.dot -Tpdf -o emr_datastructure.pdf"
+
+digraph G {
+  node [shape=record];
+  emr_event [shape=record, label="{EMREvent|emr_event}"]
+      emr_event_item_emr_plane_hits [shape=record, label="{EMRPlaneHitArray|emr_plane_hits}"]
+        emr_event_item_emr_plane_hits_array_item [shape=record, label="{EMRPlaneHit|[]}"]
+        emr_event_item_emr_plane_hits_array_item_emr_bar [shape=record, label="{EMRBarArray|emr_bars}"]
+          emr_event_item_emr_plane_hits_array_item_emr_bar_array_item [shape=record, label="{EMRBar|[]}"]
+          emr_event_item_emr_plane_hits_array_item_emr_bar_array_item_emr_bar_hit [shape=record, label="{EMRBarHitArray|emr_bar_hits}"]
+            emr_event_item_emr_plane_hits_array_item_emr_bar_array_item_emr_bar_hit_array_item [shape=record, label="{EMRBarHit|[]}"]
+  emr_event -> emr_event_item_emr_plane_hits -> emr_event_item_emr_plane_hits_array_item -> emr_event_item_emr_plane_hits_array_item_emr_bar ->         emr_event_item_emr_plane_hits_array_item_emr_bar_array_item -> emr_event_item_emr_plane_hits_array_item_emr_bar_array_item_emr_bar_hit -> emr_event_item_emr_plane_hits_array_item_emr_bar_array_item_emr_bar_hit_array_item
+}

@@ -1,0 +1,19 @@
+// generate using "dot spill_structure.dot -Tpdf -o spill_structure.pdf"
+
+digraph G {
+  node [shape=record];
+  root_item [shape=record, label="{Spill|}"]
+  daq_data [shape=record, label="{DAQData|daq_data}"]
+  emr_spill_data [shape=record, label="{EMRSpillData|emr_spill_data}"]
+  maus_event_type [shape=record, label="{MausEventType|maus_event_type}"]
+  mc_events [shape=record, label="{MCEventArray|mc_events}"]
+  recon_events [shape=record, label="{ReconEventArray|recon_events}"]
+  scalars [shape=record, label="{Scalars|scalars}"]
+
+  root_item -> daq_data
+  root_item -> emr_spill_data
+  root_item -> maus_event_type
+  root_item -> mc_events
+  root_item -> recon_events
+  root_item -> scalars
+}

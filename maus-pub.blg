@@ -1,0 +1,45 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.6)
+The top-level auxiliary file: maus-pub.aux
+The style file: unsrt.bst
+Database file #1: mice.bib
+You've used 34 entries,
+            1791 wiz_defined-function locations,
+            610 strings with 7452 characters,
+and the built_in function-call counts, 5238 in all, are:
+= -- 391
+> -- 165
+< -- 0
++ -- 74
+- -- 40
+* -- 243
+:= -- 709
+add.period$ -- 74
+call.type$ -- 34
+change.case$ -- 18
+chr.to.int$ -- 0
+cite$ -- 34
+duplicate$ -- 250
+empty$ -- 711
+format.name$ -- 40
+if$ -- 1233
+int.to.chr$ -- 0
+int.to.str$ -- 34
+missing$ -- 17
+newline$ -- 145
+num.names$ -- 18
+pop$ -- 188
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 158
+stack$ -- 0
+substring$ -- 273
+swap$ -- 38
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 31
+width$ -- 36
+write$ -- 283

@@ -1,0 +1,146 @@
+\relax 
+\global\@todotoctrue
+\citation{IDR}
+\citation{MC_Overview}
+\citation{BeamlineJINST}
+\citation{BeamCharacterisationEurPhysJ}
+\newlabel{-TOC-}{{}{1}}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
+\newlabel{sec:intro}{{1}{1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}The MICE experiment}{1}}
+\newlabel{sec:mice}{{1.1}{1}}
+\citation{BeamlineJINST}
+\citation{NIMA_TOF}
+\citation{CkovIEEE}
+\citation{TrackersNIM}
+\citation{BeamCharacterisationEurPhysJ}
+\citation{EMRJINST11}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces  Schematic diagram of the configuration of the experiment. The red rectangles represent the coils of the spectrometer solenoids and focus coil. The individual coils of the spectrometer solenoids are labelled E1, C, E2, M1 and M2. The various detectors are also represented.}}{2}}
+\newlabel{fig:step4}{{1}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Software Requirements}{2}}
+\newlabel{sec:requirements}{{1.2}{2}}
+\global\@todotoctrue
+\citation{MausIPAC11}
+\citation{SCONS}
+\citation{bazaar}
+\citation{launchpad}
+\citation{ROOT}
+\citation{GEANT4}
+\citation{scilinux}
+\citation{centos}
+\citation{fedora}
+\citation{ubuntu}
+\citation{SWIG}
+\citation{MapReduce}
+\@writefile{toc}{\contentsline {section}{\numberline {2}MAUS}{3}}
+\newlabel{sec:maus}{{2}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Code design}{3}}
+\newlabel{sec:maus-arch}{{2.1}{3}}
+\citation{BeamlineJINST}
+\citation{JSON}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces A Map-Reduce framework.}}{4}}
+\newlabel{fig:mapreduce}{{2}{4}}
+\citation{ROOT}
+\citation{JSONCPP}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The MAUS API class hierarchy for Map and Reduce modules. The input and output modules follow a related design. \emph  {T} represents a templated argument. ``+'' indicates the introduction of a virtual void method, defining an interface, while ``-'' indicates a class implements that method, fulfilling that aspect of the interface. The functions \emph  {process\_pyobj} are the main entry points for Python applications, \emph  {process} the entry points for C++ applications. The framework can be extended as many times as is neccessary, as exmplified by the ``SpecialisedMap'' classes.}}{5}}
+\newlabel{fig:api}{{3}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Data Structure}{6}}
+\newlabel{sec:maus-datastr}{{2.2}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Physics Data}{6}}
+\newlabel{sec:physics-datastr}{{2.2.1}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The MAUS output structure for a spill event. The top label in each box is the name of the C++ class and the bottom label is the json branch name.}}{7}}
+\newlabel{fig:datastructure-spill}{{4}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The MAUS data structure for MC events. The top label in each box is the name of the C++ class and the bottom label is the json branch name. [] indicates that child objects are array items.}}{7}}
+\newlabel{fig:datastructure-mc}{{5}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces The MAUS data structure for reconstruction events. The top label in each box is the name of the C++ class and the bottom label is the json branch name.}}{8}}
+\newlabel{fig:datastructure-recon}{{6}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces The MAUS data structure for CKOV (left), EMR (middle) and KL (right) reconstruction events. The top label in each box is the name of the C++ class and the bottom label is the json branch name. [] indicates that child objects are array items.}}{8}}
+\newlabel{fig:datastructure-recon-ckov-emr-kl}{{7}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces The MAUS data structure for the tracker. The top label in each box is the name of the C++ class and the bottom label is the json branch name. [] indicates that child objects are array items.}}{9}}
+\newlabel{fig:datastructure-recon-scifi}{{8}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces The MAUS data structure for the TOFs. The top label in each box is the name of the C++ class and the bottom label is the json branch name. [] indicates that child objects are array items.}}{9}}
+\newlabel{fig:datastructure-recon-tof}{{9}{9}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Top Level Data Organisation}{10}}
+\newlabel{sec:top-level-datastr}{{2.2.2}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Class hierarchy for the wrappers and base class of the top-level classes of the MAUS data structure.}}{10}}
+\newlabel{fig:top-level}{{10}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Data Flow}{10}}
+\newlabel{sec:maus-dataflow}{{2.3}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Testing}{10}}
+\newlabel{sec:maus-tests}{{2.4}{10}}
+\citation{Jenkins}
+\global\@todotoctrue
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Data flow for the MAUS project. The data flow is color-coded by detector: Ckov - green, EMR - purple, KL - orange, TOF - blue, Tracker - red. }}{11}}
+\newlabel{fig:maus_process_diagram}{{11}{11}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Monte Carlo}{11}}
+\newlabel{sec:mc}{{3}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Beam generation}{11}}
+\newlabel{sec:beam}{{3.1}{11}}
+\citation{G4Beamline}
+\citation{ICOOL}
+\citation{GDML}
+\citation{fastrad}
+\citation{libxml}
+\citation{xslt}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}GEANT4}{12}}
+\newlabel{sec:geant}{{3.2}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Geometry}{12}}
+\newlabel{sec:geo}{{3.3}{12}}
+\global\@todotoctrue
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Tracking, field maps and beam optics}{13}}
+\newlabel{sec:fieldoptics}{{3.4}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Detector response and digitization}{13}}
+\newlabel{sec:detresp}{{3.5}{13}}
+\citation{NIMA_TOF}
+\citation{TrackerSoftwareJINST}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Reconstruction}{14}}
+\newlabel{sec:recon}{{4}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Time of flight}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Scintillating fiber trackers}{14}}
+\citation{PionContaminationJINST}
+\citation{EMRJINST}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}KL calorimeter}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Electron-muon ranger}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Cherenkov}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Global reconstruction}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.6.1}Global Track Matching}{15}}
+\citation{Django}
+\citation{GridPP}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.6.2}Global PID}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.7}Online reconstruction}{16}}
+\bibdata{mice}
+\bibcite{IDR}{1}
+\bibcite{MC_Overview}{2}
+\bibcite{BeamlineJINST}{3}
+\bibcite{BeamCharacterisationEurPhysJ}{4}
+\bibcite{NIMA_TOF}{5}
+\bibcite{CkovIEEE}{6}
+\bibcite{TrackersNIM}{7}
+\bibcite{EMRJINST11}{8}
+\bibcite{MausIPAC11}{9}
+\bibcite{SCONS}{10}
+\bibcite{bazaar}{11}
+\bibcite{launchpad}{12}
+\bibcite{ROOT}{13}
+\bibcite{GEANT4}{14}
+\bibcite{scilinux}{15}
+\bibcite{centos}{16}
+\bibcite{fedora}{17}
+\bibcite{ubuntu}{18}
+\bibcite{SWIG}{19}
+\bibcite{MapReduce}{20}
+\bibcite{JSON}{21}
+\bibcite{JSONCPP}{22}
+\bibcite{Jenkins}{23}
+\bibcite{G4Beamline}{24}
+\bibcite{ICOOL}{25}
+\bibcite{GDML}{26}
+\bibcite{fastrad}{27}
+\bibcite{libxml}{28}
+\bibcite{xslt}{29}
+\bibcite{TrackerSoftwareJINST}{30}
+\bibcite{PionContaminationJINST}{31}
+\bibcite{EMRJINST}{32}
+\bibcite{Django}{33}
+\bibcite{GridPP}{34}
+\bibstyle{unsrt}

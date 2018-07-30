@@ -1,0 +1,37 @@
+// generate using "dot map_reduce.dot -Tpdf -o map_reduce.pdf"
+
+digraph G {
+  margin=0.2;
+  rankdir=LR;
+  nodesep=.07;
+  node [shape=record,width=.1,height=.1];
+
+  node0 [label = "<f1> Input |<f2> Input |<f3> Input |<f4> Input |<f5> Input"]
+
+  node1 [label = "Map"];
+  node2 [label = "Map"];
+  node3 [label = "Map"];
+  node4 [label = "Map"];
+  node5 [label = "Map"];
+
+  node6 [label = "Reduce"];
+  node7 [label = "Reduce"];
+
+  node8 [label = "Output"];
+  node9 [label = "Output"];
+
+  node0:f1 -> node1;
+  node0:f2 -> node2;
+  node0:f3 -> node3;
+  node0:f4 -> node4;
+  node0:f5 -> node5;
+
+  node1 -> node6;
+  node2 -> node6;
+  node3 -> node6;
+  node4 -> node7;
+  node5 -> node7;
+
+  node6 -> node8;
+  node7 -> node9;
+}
