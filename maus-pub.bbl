@@ -1,12 +1,19 @@
 \begin{thebibliography}{10}
 
+\bibitem{CoolingIPAC18}
+T.~Mohayai et~al.
+\newblock {First Demonstration of Ionization Cooling in MICE}.
+\newblock In {\em Proc. 2018 International Particle Accelerator Conference,
+  Vancouver}, 2018.
+\newblock FRXGBE3,
+  \href{https://doi.org/10.18429/JACoW-IPAC2018-FRXGBE3}{https://doi.org/10.18429/JACoW-IPAC2018-FRXGBE3}.
+
 \bibitem{IDR}
 {The IDS-NF collaboration}.
 \newblock International design study for the neutrino factory: Interim design
   report, 2011.
 \newblock IDS-NF-020,
-  \href{www.ids-nf.org/wiki/FrontPage/Documentation}{www.ids-nf.org/wiki/Front%
-Page/Documentation}.
+  \href{www.ids-nf.org/wiki/FrontPage/Documentation}{www.ids-nf.org/wiki/FrontPage/Documentation}.
 
 \bibitem{MC_Overview}
 Steve Geer.
@@ -87,23 +94,18 @@ S~Agnostinelli et~al.
 \bibitem{ubuntu}
 \href{https://ubuntu.com}{https://ubuntu.com}.
 
-\bibitem{SWIG}
-\href{http://www.swig.org/}{http://www.swig.org/}.
-
 \bibitem{MapReduce}
 J.~Dean and S.~Ghemawat.
 \newblock {MapReduce}: Simplified data processing on large clusters.
 \newblock In {\em Proceedings of {OSDI}04}, 2004.
 \newblock
-  \href{http://research.google.com/archive/mapreduce.html}{http://research.goo%
-gle.com/archive/mapreduce.html}.
+  \href{http://research.google.com/archive/mapreduce.html}{http://research.google.com/archive/mapreduce.html}.
 
 \bibitem{JSON}
 \href{http://json.org}{http://json.org}.
 
 \bibitem{JSONCPP}
-\href{https://github.com/open-source-parsers/jsoncpp}{https://github.com/open-%
-source-parsers/jsoncpp}.
+\href{https://github.com/open-source-parsers/jsoncpp}{https://github.com/open-source-parsers/jsoncpp}.
 
 \bibitem{Jenkins}
 \href{http://jenkins-ci.org}{http://jenkins-ci.org}.
@@ -120,6 +122,12 @@ R.~C. Fernow.
 \newblock Icool: A simulation code for ionization cooling of muon beams.
 \newblock In {\em Proc. 1999 Particle Accelerator Conference, New York}, 1999.
 
+\bibitem{GEANT4HPhysics}
+J~Apostolakis et~al.
+\newblock {Geometry and physics of the geant4 toolkit for high and medium
+  energy applications}.
+\newblock {\em Radiation Physics and Chemistry}, 78(10):859 -- 873, 2009.
+
 \bibitem{GDML}
 J.~McCormick R.~Chytracek.
 \newblock Geometry description markup language for physics simulation and
@@ -129,12 +137,13 @@ J.~McCormick R.~Chytracek.
 \bibitem{fastrad}
 \href{http://fastrad.net}{http://fastrad.net}.
 
-\bibitem{libxml}
-\href{https://xmlsoft.org}{https://xmlsoft.org}.
-
 \bibitem{xslt}
-\href{https://www.w3.org/standards/xml/transformation}{https://www.w3.org/stan%
-dards/xml/transformation}.
+\href{https://www.w3.org/standards/xml/transformation}{https://www.w3.org/standards/xml/transformation}.
+
+\bibitem{MAUSNuFact}
+C.T Rogers et~al.
+\newblock Muon front end for the neutrino factory.
+\newblock {\em Phys. Rev. ST Accel. Beams}, 16:040104, 2013.
 
 \bibitem{TrackerSoftwareJINST}
 A.~Dobbs, C.~Hunt, K.~Long, E.~Santos, M.A. Uchida, P.~Kyberd, C.~Heidt,

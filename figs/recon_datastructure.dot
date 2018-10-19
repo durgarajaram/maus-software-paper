@@ -2,19 +2,17 @@
 
 digraph G {
   node [shape=record];
-  recon_events_array [shape=record, label="{ReconEventArray|recon_events}"]
+  recon_events_array [shape=record, label="{ReconEventArray}"]
     recon_events_array_item [shape=record, label="{ReconEvent|[]}"]
-      recon_events_array_item_ckov_event [shape=record, label="{CkovEvent|ckov_event}"]
-      recon_events_array_item_emr_event [shape=record, label="{EMREvent|emr_event}"]
-      recon_events_array_item_kl_event [shape=record, label="{KLEvent|kl_event}"]
-      recon_events_array_item_scifi_event [shape=record, label="{SciFiEvent|scifi_event}"]
-      recon_events_array_item_tof_event [shape=record, label="{TOFEvent|tof_event}"]
-      recon_events_array_item_trigger_event [shape=record, label="{TriggerEvent|trigger_event}"]
+      recon_events_array_item_ckov_event [shape=record, label="{CkovEvent}"]
+      recon_events_array_item_emr_event [shape=record, label="{EMREvent}"]
+      recon_events_array_item_kl_event [shape=record, label="{KLEvent}"]
+      recon_events_array_item_scifi_event [shape=record, label="{SciFiEvent}"]
+      recon_events_array_item_tof_event [shape=record, label="{TOFEvent}"]
   recon_events_array -> recon_events_array_item
     recon_events_array_item -> recon_events_array_item_ckov_event
     recon_events_array_item -> recon_events_array_item_emr_event
     recon_events_array_item -> recon_events_array_item_kl_event
     recon_events_array_item -> recon_events_array_item_scifi_event
     recon_events_array_item -> recon_events_array_item_tof_event
-    recon_events_array_item -> recon_events_array_item_trigger_event
 }
