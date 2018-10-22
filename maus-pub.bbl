@@ -13,7 +13,7 @@
 \newblock International design study for the neutrino factory: Interim design
   report, 2011.
 \newblock IDS-NF-020,
-  \href{www.ids-nf.org/wiki/FrontPage/Documentation}{www.ids-nf.org/wiki/FrontPage/Documentation}.
+  \href{https://www.ids-nf.org/wiki/FrontPage/Documentation}{https://www.ids-nf.org/wiki/FrontPage/Documentation}.
 
 \bibitem{MC_Overview}
 Steve Geer.
@@ -55,27 +55,20 @@ R.~Asfandiyarov et~al.
 \newblock {The design and construction of the MICE Electron-Muon Ranger}.
 \newblock {\em JINST}, 11(10):T10007, 2016.
 
-\bibitem{MausIPAC11}
-C.~Tunnell and C~Rogers.
-\newblock {MAUS: MICE Analysis User Software}.
-\newblock In {\em Proc. 2011 International Particle Accelerator Conference, San
-  Sebastian}, 2011.
-\newblock {MOPZ013}.
-
 \bibitem{SCONS}
-\href{http://scons.org/}{http://scons.org/}.
+\href{https://scons.org}{https://scons.org}.
 
 \bibitem{bazaar}
 \href{https://bazaar.canonical.com}{https://bazaar.canonical.com}.
 
 \bibitem{launchpad}
-\href{http://launchpad.net}{http://launchpad.net}.
+\href{https://launchpad.net}{https://launchpad.net}.
 
 \bibitem{ROOT}
 R.~Brun and F.~Rademakers.
 \newblock Root - an object oriented data analysis framework.
 \newblock {\em Nucl. Instrum. Meth.}, A389:81 -- 86, 1997.
-\newblock \href{http://root.cern.ch/}{http://root.cern.ch/}.
+\newblock \href{https://root.cern.ch}{https://root.cern.ch}.
 
 \bibitem{GEANT4}
 S~Agnostinelli et~al.
@@ -102,13 +95,13 @@ J.~Dean and S.~Ghemawat.
   \href{http://research.google.com/archive/mapreduce.html}{http://research.google.com/archive/mapreduce.html}.
 
 \bibitem{JSON}
-\href{http://json.org}{http://json.org}.
+\href{https://json.org}{https://json.org}.
 
 \bibitem{JSONCPP}
 \href{https://github.com/open-source-parsers/jsoncpp}{https://github.com/open-source-parsers/jsoncpp}.
 
 \bibitem{Jenkins}
-\href{http://jenkins-ci.org}{http://jenkins-ci.org}.
+\href{https://jenkins-ci.org}{https://jenkins-ci.org}.
 
 \bibitem{G4Beamline}
 Thomas~J. Roberts and Daniel~M. Kaplan.
@@ -135,7 +128,7 @@ J.~McCormick R.~Chytracek.
 \newblock {\em IEEE Trans. Nucl. Sci.}, 53:2892--2896, 2006.
 
 \bibitem{fastrad}
-\href{http://fastrad.net}{http://fastrad.net}.
+\href{https://fastrad.net}{https://fastrad.net}.
 
 \bibitem{xslt}
 \href{https://www.w3.org/standards/xml/transformation}{https://www.w3.org/standards/xml/transformation}.
@@ -166,6 +159,6 @@ D.~Adams et~al.
 \href{https://www.djangoproject.com/}{https://www.djangoproject.com/}.
 
 \bibitem{GridPP}
-\href{http://www.gridpp.ac.uk/}{www.gridpp.ac.uk/}.
+\href{https://www.gridpp.ac.uk}{https://www.gridpp.ac.uk}.
 
 \end{thebibliography}
