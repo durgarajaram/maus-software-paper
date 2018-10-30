@@ -36,6 +36,7 @@
 %\author[c]{D. Diaz,}  
 \author[c]{A.J. Dobbs,} 
 \author[a]{F. Drielsma,} 
+\author[h]{M. Drews,} 
 \author[c]{M. Ellis,}  
 %\author[c]{S. Fayer,} 
 \author[e]{M. Fedorov,} 
@@ -70,7 +71,7 @@
 \author[f]{C.E. Pidcott,}  
 %\author[c]{R. Powell?,}  
 \author[h,1]{D. Rajaram,\note{Corresponding author.}}  
-%\author[m]{M. Rayner,}  
+\author[m]{M. Rayner,}  
 %\author[c]{I. Reichel?,}  
 %\author[c]{S. Ricciardi,}  
 %\author[c]{M. Robinson?,}  
@@ -166,7 +167,7 @@ The MICE  Analysis User Software (MAUS) is the collaboration's simulation, recon
 
 Installation is performed via a set of shell scripts with SCons~\cite{SCONS} as the build tool. The codebase is maintained with  the GNU Bazaar revision control system~\cite{bazaar} and is hosted on Launchpad~\cite{launchpad}. MAUS has a number of dependencies on standard packages such as Python, ROOT~\cite{ROOT} and Geant4~\cite{GEANT4} which are built as "third party" external libraries during the installation process.  The officially supported platform is Scientific Linux 6~\cite{scilinux} though developers have successfully built on CentOS~\cite{centos}, Fedora~\cite{fedora}, and Ubuntu~\cite{ubuntu} distributions.
 
-Each of the MICE detector systems, described in section~\ref{sec:mice}, is represented within MAUS. Their data structures are described in section~\ref{sec:maus-datastr} and their simulation and reconstruction algorithms in sections~\ref{sec:mc} and \ref{sec:recon}. MAUS also provides ``global'' reconstruction routines, which combine data from individual detector systems to identify particle species by the likelihood method and a global track fit. These algorithms are also described in section~\ref{sec:recon}. 
+Each of the MICE detector systems, described in section~\ref{sec:mice}, is represented within MAUS. Their data structures are described in section~\ref{sec:maus-datastr} and their simulation and reconstruction algorithms in sections~\ref{sec:mc} and \ref{sec:recon}. MAUS also provides ``global'' reconstruction routines, which combine data from individual detector systems to identify particle species by the likelihood method and perform a global track fit. These algorithms are also described in section~\ref{sec:recon}. 
 
 
 \subsection{Code design}\label{sec:maus-arch}
@@ -175,7 +176,7 @@ MAUS is written in a mixture of Python and C++. C++ is used for complex or low-l
 
 MAUS has an Application Programming Interface (API) that provides a framework on which developers can hang individual routines. The MAUS API provides MAUS developers with a well-defined environment for developing reconstruction code, while allowing independent development of the back-end and code-sharing of common elements, such as error handling and data-wrangling. 
 
-The MAUS data processing model is inspired by the Map-Reduce framework~\cite{MapReduce}, which forms the core of the API design. Map-Reduce, illustrated in figure~\ref{fig:mapreduce} is a useful model for parallelizing data processing on a large scale. For MAUS, the API was simplified to use \emph{transformers} in place of maps, though these modules have retained the name \emph{map}. A map process takes a single object as an input, which remains unaltered, and returns a new object as the output, whereas a transformer process alters the input object in place (in the case of MAUS this object is the \emph{spill} class, see Section~\ref{sec:maus-datastr}).
+The MAUS data processing model is inspired by the Map-Reduce framework~\cite{MapReduce}, which forms the core of the API design. Map-Reduce, illustrated in figure~\ref{fig:mapreduce} is a useful model for parallelizing data processing on a large scale. A map process takes a single object as an input, which remains unaltered, and returns a new object as the output, whereas a transformer process alters the input object in place (in the case of MAUS this object is the \emph{spill} class, see Section~\ref{sec:maus-datastr}).
 
 A \emph{Module} is the basic building block of the MAUS API framework. Four types of module exist within MAUS:
 
