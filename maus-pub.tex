@@ -1,89 +1,54 @@
 \pdfoutput=1 % only if pdf/png/jpg images are used
-%\documentclass{JINST}
 
 \documentclass[11pt]{article}
-\usepackage{jinstpub}
+\usepackage{maus-jinstpub}
 \usepackage{url}
 \urlstyle{same}
 
 \usepackage{placeins}
 
-\usepackage{lineno}
+%\usepackage{lineno}
+
 
 \title{MAUS: The MICE Analysis User Software}
-
-%\author{MICE Collaboration \\ {\bf NOTE: Need to finalize author list. Include from list of MAUS developers?}
-%\\
-
-%\author{R. Asfandiyarov[a], J.J. Back?, R. Bayes[b], V. Blackmore, A. Blondel?, A. Bogacz?, M. Bogomilov, M. Bonesini, C. Booth?, A. Bross, T. Carlisle?, P. Chimenti?, L. Coney?, J.C. Cobb?, D. Diaz?, A.J. Dobbs, F. Drielsma, M. Ellis?, S. Fayer?, M. Fedorov?, P. Franchini, J.R. Greis, P.M. Hanlet, C. Heidt, D. Colling, S. Gilardoni?, G. Hanson?, C. Heidt, C. Hunt, P. Janot?, G. Kafka?, D.M. Kaplan, Y. Karadzhov, P. Kyberd, P. Lane?, M. Littlefield?, A. Liu, K.L. Long, D. Maletic, J. Martyniak, S. Middleton, T. Mohayai, J. Nugent, E. Overton, V.P. Palladino?, M. Palmer?, J. Pasternak?, V. Pec, C.E. Pidcott, R. Powell?, D. Rajaram, M. Rayner, I. Reichel?, S. Ricciardi, M. Robinson?, C.T. Rogers, M. Savic, G. Santin?, J. Sedgbeer?, P. Snopok, P. Soler, D.C. Speirs?, I. Taylor?, R. Tsenov?, Y.T. Torun, C.D. Tunnell?, M.A. Uchida, V. Verguilov?, K. Walaron?, S. Wilbur, S. Yang?
-%\\
-%E-mail: \email{durga@fnal.gov}}
 
 \author[a]{R. Asfandiyarov,}
 \author[b]{R. Bayes,}
 \author[c]{V. Blackmore,}
-%\author[c]{A. Blondel,}
-%\author[c]{A. Bogacz,} 
 \author[d]{M. Bogomilov,} 
-%\author[c]{M. Bonesini,} 
-%\author[c]{C. Booth,} 
-%\author[c]{A. Bross,}  
-%\author[c]{T. Carlisle,} 
-%\author[c]{P. Chimenti,}  
 \author[c]{D. Colling,}  
-%\author[c]{L. Coney,} 
-%\author[c]{J.C. Cobb,}  
-%\author[c]{D. Diaz,}  
 \author[c]{A.J. Dobbs,} 
 \author[a]{F. Drielsma,} 
 \author[h]{M. Drews,} 
 \author[c]{M. Ellis,}  
-%\author[c]{S. Fayer,} 
 \author[e]{M. Fedorov,} 
 \author[f]{P. Franchini,} 
 \author[g]{R. Gardener,}
 \author[f]{J.R. Greis,} 
 \author[h]{P.M. Hanlet,} 
-%\author[c]{S. Gilardoni?,} 
-%\author[c]{G. Hanson?,} 
 \author[i]{C. Heidt,}  
 \author[c]{C. Hunt,}  
-%\author[c]{P. Janot?,}  
 \author[h]{G. Kafka,} 
-%\author[c]{D.M. Kaplan,}  
 \author[a]{Y. Karadzhov,}  
 \author[c]{A. Kurup,} 
 \author[g]{P. Kyberd,}  
-%\author[c]{P. Lane?,}  
 \author[g]{M. Littlefield,}  
 \author[j]{A. Liu,}  
-\author[c,n]{K.L. Long,}  
+\author[c,n]{K. Long,}  
 \author[k]{D. Maletic,}  
 \author[c]{J. Martyniak,}  
 \author[c]{S. Middleton,}  
 \author[g]{T. Mohayai,}  
+\author[g]{J.J. Nebrensky,}  
 \author[b]{J.C. Nugent,}  
 \author[l]{E. Overton,}  
-%\author[c]{V.P. Palladino?,}  
-%\author[c]{M. Palmer?,}  
-%\author[c]{J. Pasternak?,}  
 \author[l]{V. Pec,}  
 \author[f]{C.E. Pidcott,}  
-%\author[c]{R. Powell?,}  
 \author[h,1]{D. Rajaram,\note{Corresponding author.}}  
 \author[m]{M. Rayner,}  
-%\author[c]{I. Reichel?,}  
-%\author[c]{S. Ricciardi,}  
-%\author[c]{M. Robinson?,}  
 \author[n]{C.T. Rogers,}  
 \author[k]{M. Savic,}  
-%\author[c]{G. Santin?,}  
-%\author[c]{J. Sedgbeer?,}  
-%\author[h]{P. Snopok,}  
-%\author[c]{P. Soler,}  
-%\author[c]{D.C. Speirs?,}  
 \author[f]{I. Taylor,}  
-%\author[c]{R. Tsenov?,}  
 \author[h]{Y.T. Torun,}  
 \author[m]{C.D. Tunnell,}  
 \author[c]{M.A. Uchida,}  
@@ -91,7 +56,6 @@
 \author[b]{K. Walaron,}  
 \author[h]{M. Winter,}  
 \author[l]{S. Wilbur}  
-%\author[c]{S. Yang?} 
 %\\
 \affiliation[a]{DPNC, section de Physique, Universit\'e de Gen\`eve, Geneva, Switzerland}
 \affiliation[b]{School of Physics and Astronomy, Kelvin Building, The University of Glasgow, Glasgow, UK}
@@ -118,13 +82,12 @@
 
 \begin{document}
 
-
 \maketitle
 
 
 \section{Introduction}\label{sec:intro}
 
-\linenumbers
+%\linenumbers
 
 \subsection{The MICE experiment} \label{sec:mice}
 The Muon Ionization Cooling Experiment (MICE) sited at the STFC Rutherford Appleton Laboratory (RAL) has delivered the first demonstration of muon ionization cooling~\cite{CoolingIPAC18} -- the reduction of the phase-space of muon beams. Muon-beam cooling is essential for future facilities based on muon acceleration, such as the Neutrino Factory or Muon Collider \cite{IDR, MC_Overview}. The experiment was designed to be built and operated in a staged manner. In the first stage, the muon beamline was commissioned  ~\cite{BeamlineJINST} and characterized~\cite{BeamCharacterisationEurPhysJ}. The configuration shown in figure~\ref{fig:step4}  was used to study the factors that determine the performance of an ionization-cooling channel and to observe for the first time the reduction in transverse emittance of a muon beam.
@@ -132,13 +95,6 @@ The Muon Ionization Cooling Experiment (MICE) sited at the STFC Rutherford Apple
 The MICE Muon Beam line is described in detail in~\cite{BeamlineJINST}. There are 5 different detector systems present on the beamline: time-of-flight (TOF) scintillators \cite{NIMA_TOF}, threshold Cherenkov (Ckov) counters \cite{CkovIEEE}, scintillating fiber trackers \cite{TrackersNIM}, a sampling calorimeter (KL) \cite{BeamCharacterisationEurPhysJ}, and the Electron Muon Ranger (EMR) -- a totally active scintillating calorimeter \cite{EMRJINST11}. The TOF detector system consists of three detector stations, TOF0, TOF1 and TOF2, each composed of two orthogonal layers of scintillator bars. The TOF system is used to determine particle identification (PID) via the time-of-flight between the stations. Each station also provides a low resolution image of the beam profile.  The Ckov system consists of two aerogel threshold Cherenkov stations, CkovA and CkovB. The KL and EMR detectors, the former using scintillating fibers embedded in lead sheets, and the latter scintillating bars, form the downstream calorimeter system.
 
 The tracker system consists of two scintillating fiber detectors, one upstream of the MICE cooling cell, the other downstream, in order to measure the change in emittance across the cooling cell. Each detector consists of 5 stations, each station having 3 fiber planes, allowing precision measurement of momentum and position to be made on a particle-by-particle basis.
-
-%%
-%\begin{figure}[!htb]
-%\centering
-%\includegraphics[width=0.9\textwidth]{figs/stepIV-rendering.jpg}
-%\caption{Rendering of the next MICE Step IV configuration}
-%\end{figure}
 
 \begin{figure}[!htb]
 \centering
@@ -154,12 +110,6 @@ The MICE software must serve both the accelerator-physics and the particle-physi
 
 Given the complexity and the time-scale of the experiment, it was essential to ensure that the software can be maintained over the long-term. Good performance was also important in order to ensure that the software can reconstruct data with sufficient speed to support live online monitoring of the experiment.
 
-%\begin{figure}[!htb]
-%\centering
-%\includegraphics[width=0.9\textwidth]{figs/maus-detectors.png}
-%\caption{Sketch of MICE Step IV showing the tracking and particle identification detectors.}
-%\label{fig:step4-layout}
-%\end{figure}
 
 \section{MAUS}\label{sec:maus}
 
@@ -204,7 +154,6 @@ A \emph{Module} is the basic building block of the MAUS API framework. Four type
 \end{figure}
 
 There are some objects that sit outside the scope of this modular framework but are nevertheless required by several of the modules. For instance,  the detector geometries, magnetic fields, and calibrations are required by the reconsruction and simulation modules, and objects such as the electronics-cabling maps are required in order to unpack data from the data acquisition (DAQ) source, and error handling functionality is required by all of the modules. All these objects are accessed through a static singleton \emph{globals} class. 
-%After the beginning of the run, mappers can have no internal state, in order to facilitate distributed processing.
 
 MAUS has two execution concepts. A \emph{job} refers to a single execution of the code, while a \emph{run} refers to the processing of data for a DAQ run or MC run. A job may contain many runs. Since data are typically accessed from a single source and written to a single destination, Inputters and Outputters are initialized and destroyed at the beginning and end of a job. On the other hand, Mappers and Reducers are initialized at the beginning of a run in order to allow run-specific information such as electronics cabling maps, fields, calibrations and geometries to be loaded.
 
@@ -212,14 +161,11 @@ The principal data type in MAUS, which is passed from module to module, is the \
 
 Modules can exchange spill data either as C++ pointers or JSON~\cite{JSON} objects. In Python, the data format can be changed by using a converter module, and in C++ mappers are templated to a MAUS data type and an API  handles any necessary conversion to that type (see Fig.~\ref{fig:api}). 
 
-%During production deployment of the software it was found that there was a large reduction in processing speed when JSON was used for passing data internally, due to the inherent slowness in (de)serializing each spill to JSON format. Hence it was decided that modules for official reconstruction and simulations must exchange C++ objects by default, in order to minimize need for conversion between data types. However, data can still be output in JSON format and developers find it extremely useful during debugging.
 
 Data contained within the MAUS data structure (see Section~\ref{sec:maus-datastr}) can be saved to permanent storage in one of two formats. The default data format is a ROOT~\cite{ROOT} binary and the secondary format is JSON. ROOT is a standard high-energy physics analysis package, distributed with MAUS, through which many of the analyses on MICE are performed. Each spill is stored as a single entry in a ROOT TTree object.  JSON is an ASCII data-tree format. Specific JSON parsers are available -- for example, the Python \emph{json} library, and the C++ \emph{JsonCpp} \cite{JSONCPP} parser come prepackaged with MAUS. 
 
 In addition to storing the output from the Map modules, MAUS is also capable of storing the data  produced by  \emph{Reducer} modules using a special \emph{Image} class. This class is used by \emph{Reducers} to store images of monitoring histograms, efficiency plots, etc. \emph{Image} data may only be saved in JSON format.
 
-%[??? Clarify ] Besides saving the full data structure, MAUS is also capable outputting the reduced data produced by Reducer modules. These data are not part of the spill, but have their own special data class, known as \emph{Image}. Image is used by Reducers to store images of monitoring histograms, efficiency plots, etc. Image data may only be saved in JSON format.  
-%
 \subsection{Data structure}\label{sec:maus-datastr}
 
 \subsubsection{Physics data} \label{sec:physics-datastr}
@@ -262,7 +208,6 @@ The sub-structure of the the reconstruction event class is shown in figure~\ref{
 
 \begin{figure}[ptb]
 \centering
-%\includegraphics[width=1.0\textwidth]{figs/scifi_datastructure.pdf}
 \includegraphics[width=1.0\textheight,angle=90,origin=c]{figs/scifi_datastructure.pdf}
 \caption{The MAUS data structure for the tracker. The label in each box is the name of the C++ class and []  indicates that child objects are array items.}
 \label{fig:datastructure-recon-scifi}
@@ -270,7 +215,6 @@ The sub-structure of the the reconstruction event class is shown in figure~\ref{
 
 \begin{figure}[ptb]
 \centering
-%\includegraphics[width=1.0\textwidth]{figs/tof_datastructure.pdf}
 \includegraphics[width=1.0\textheight,angle=90,origin=c]{figs/tof_datastructure.pdf}
 \caption{The MAUS data structure for the TOFs. The label in each box is the name of the C++ class and [] indicates that child objects are array items.}
 \label{fig:datastructure-recon-tof}
@@ -298,7 +242,6 @@ The MAUS data flow, showing the reconstruction chain for data originating from M
 
 \begin{figure}[htbp]
   \centering
-   %\includegraphics[width=1.0\textwidth]{figs/maus_process_diagram.pdf}
   \includegraphics[width=0.9\textheight, angle=90, origin=c]{figs/maus_process_diagram.pdf}
   \caption{Data flow for the MAUS project. The data flow is color-coded by detector: Ckov - green, EMR - purple, KL - orange, TOF - blue, Tracker - red. }
   \label{fig:maus_process_diagram}
@@ -306,12 +249,8 @@ The MAUS data flow, showing the reconstruction chain for data originating from M
 
 \subsection{Testing}\label{sec:maus-tests}
 MAUS has a set of tests at the unit level and the integration level, together with code-style tests for both Python and C++. Unit tests are implemented to test a single function, while integration tests operate on a complete workflow. Unit tests check that each function operates as intended by the developer. Tests are run automatically for every version committed to the repository and results show that a high level of code coverage has been achieved. Integration tests allow the overall performance of the code to be checked against specifications. The MAUS team provides unit test coverage that executes 70--80 $\%$ of the total code base. This level of coverage typically results in a code that performs the major workflows without any problems.
-%
-%but has errors in some of the less well-used functions and can behave ungracefully following user error. At the most recent release, MAUS  test coverage was  68 $\%$ for python code, 78 $\%$ for non-legacy C++ code and 36 $\%$ for legacy (pre-2011) C++ code.
 
 The MAUS codebase is built and tested using a Jenkins~\cite{Jenkins} continuous integration environment deployed on a cluster of servers. Builds and tests of the development branch are automatically triggered when there is a change to the codebase.  Developers are asked to perform a build and test on a personal branch of the codebase using the test server before requesting a merge with the development trunk. This enables the MAUS team to make frequent clean releases. Typically MAUS works on a 4--8 week major-release cycle.
-
-%MAUS operates a continuous integration stack using a suite of test servers. Code-building and testing is driven by the Jenkins test environment~\cite{Jenkins}. Developers are asked to perform a build and test on a personal branch of the code-base using the test server before requesting a merge with the development trunk. This enables the MAUS team to make frequent clean releases. Typically MAUS works on a 4--8 week major-release cycle.
 
 \section{Monte Carlo}\label{sec:mc}
 A Monte Carlo simulation of MICE encompasses beam generation, geometrical description of detectors  and fields, tracking of particles through detectors and digitization of the detectors' response to particle interactions. 
@@ -375,9 +314,6 @@ The interaction of particles in material is modeled using Geant4. A ``sensitive 
 
 \section{Reconstruction}\label{sec:recon}
 The reconstruction chain takes as its input either digitized hits from the MC or DAQ digits from real data. Regardless, the detector reconstruction algorithms, by requirement and design, operate the same way on both MC and real data. 
-%
-%??? TODO: something about aims of the reconstruction -- tracking, particle identification for purposes of physics goals [ mention physics goals somewhere up top ? ] 
-%??? TODO: some intro/description of detectors with refs to pubs ??
 
 \subsection{Time of flight}
 
@@ -389,8 +325,6 @@ The time of the hit in the slab is propagated to the PMTs at either end of the s
 
 The reconstruction proceeds in two main steps. First, the slab-hit-reconstruction takes individual PMT digits and associates them to reconstruct the hit in the slab. If there are multiple hits associated with a PMT, the hit which is earliest in time is taken to be the real hit. Then, if both PMTs on a slab have fired, the slab is considered to have a valid hit. The TDC values are converted to time and the hit time and charge associated with the slab hit are taken to be the average of the two PMT times and charges respectively. In addition, the product of the PMT charges is also calculated and stored. Secondly, individual slab hits are used to form space-points. A space-point  in the TOF is a combination of $x$ and $y$ slab hits. All combinations of $x$ and $y$ slab hits in a given station are treated as space-point candidates. Calibration corrections, stored in the Configurations Database, are applied to these hit times and if the reconstructed space-point is consistent with the resolution of the detector, the combination is said to be a valid space-point. The TOF has been shown to provide good time resolutions at the 60 ps level~\cite{NIMA_TOF}.
 
-%??? TODO: Plots of resolution, time of flight?? [ do performance plots belong in this paper?? ]
-
 
 \subsection{Scintillating fiber trackers}
 
@@ -398,24 +332,15 @@ The scintillating fiber trackers are the central piece of the reconstruction. As
 
 The tracker software algorithms and performance are described in detail in \cite{TrackerSoftwareJINST}. Digits are the most basic unit fed into the main reconstruction module, each digit representing a signal from one channel. Digits from adjacent channels are assumed to come from the same particle and are grouped to form clusters. Clusters from channels which intersect each other, in at least two planes from the same station, are used to form space-points, giving $x$ and $y$ positions where a particle intersected a station. Once space-points have been found, they are associated with individual tracks through pattern recognition (PR), giving straight or helical PR tracks. These tracks, and the space-points associated with them, are then sent to the final track fit. To avoid biases that may come from space-point reconstruction, the Kalman filter uses only reconstructed clusters as input.
 
-%??? TODO: Plots of spatial, momentum resolutions??  [ do performance plots belong in this paper?? ]
 \subsection{KL calorimeter}
 Hit-level reconstruction of the KL is  implemented in MAUS.  Individual PMT hits are unpacked from the DAQ or simulated from MC and the reconstruction associates them to identify the slabs that were hit and calculates the charge and charge-product corresponding to each slab hit. The KL has been used successfully to estimate the pion contamination in the MICE muon beamline~\cite{PionContaminationJINST}. 
-
-%({\bf NOTE: Expand? -DR}
-
-%??? TODO: What plots??  [ do performance plots belong in this paper?? ]
 
 \subsection{Electron-muon ranger}
 Hit-level reconstruction of the EMR is  implemented in MAUS. The integrated ADC count and time over threshold are calculated for each bar that was hit.
 The EMR reconstructs a wide range of variables that can be used for particle identification and momentum reconstruction. The  software and  performance of the EMR are described in detail in \cite{EMRJINST}. 
 
-%??? TODO: Ref to EMR paper
-%??? TODO: Plots??
-
 \subsection{Cherenkov}
 The CKOV reconstruction takes the raw flash-ADC data, subtracts pedestals, calculates the charge and applies calibrations to determine the photo-electron yield. 
-%{\bf NOTE: Expand?? No references to performance!! -DR}
 
 \subsection{Global reconstruction}
 The aim of the Global Reconstruction is to take the reconstructed outputs from individual detectors and tie them together to form a global track. A likelihood for each particle hypothesis is also calculated. 
@@ -423,22 +348,10 @@ The aim of the Global Reconstruction is to take the reconstructed outputs from i
 \subsubsection{Global track matching}
 
 Global track matching is performed by collating particle hits (TOFs 0, 1 and 2, KL, Ckovs) and tracks (Trackers and EMR) from each detector using their individual reconstruction and combining them using a RK4 method to propagate particles between these detectors.The tracking is performed outwards from the cooling channel -- $\emph{i.e.}$, the upstream tracker through TOF0, and downstream tracker through EMR.
-%It is also available as a commissioning tool providing through-going tracks from TOF1 to EMR, in the absence of magnetic fields.
-%Efficiency and purity are returned for global track matching and PID along with global reconstruction efficiency (combined efficiency of the global reconstruction not including individual detector recon efficiencies) and global efficiency (combined efficiency of the global reconstruction,including the result of detector recon efficiencies) values.
 %
 Track points are matched to form tracks using an RK4 method. Initially this is done independently for the upstream and downstream sections (i.e., either side of the absorber). As the trackers provide the most accurate position reconstruction, they are used as starting points for track matching, propagating hits outwards into the other detectors and then comparing the propagated position to the measured hit in the detector. The acceptance criterion for a hit belonging to a track is an agreement within the detector's resolution with an additional allowance for multiple scattering.  Track matching is currently performed for all TOFs, KL and EMR. 
 
 The RK4 propagation requires the mass and charge of the particle to be known. Hence, it is necessary to perform track matching using a hypothesis for each particle type (muons, pions, and electrons). Tracks for all possible PID hypotheses are then passed to the Global PID algorithms. 
-
-%Efficiency and purity of the track matching are evaluated on a per-detector basis by comparing MC tracks that could have been matched---which requires MC hits existing in both the respective tracker (upstream or 
-%downstream) and the detector for which the efficiency is being calculated. In order for an event to be used in this evaluation, the tracker hits have to have been reconstructed correctly or in such a way so as to not alter the path of the particle in the tracker, as otherwise track matching can't reliably be performed.  Checks are then performed to determine whether the correct hit has been matched.
-%
-
-%Track matching between upstream and downstream tracks in a no-absorber no-field scenario has been implemented using a cut on the TOF1-TOF2 time-of-flight as the principal matching criteria ($z/c < dt < z /\sim0.6c$). 
-
-%Track fitting will be performed on tracks returned from the PID in the future.
-
-%??? TODO: Plots??
 
 \subsubsection{Global PID} 
 
@@ -455,84 +368,12 @@ The input to the Global PID is several potential tracks from global track matchi
 \item For each potential PID hypothesis $p$, the log-likelihood is calculated using the PID variables;
 \item The track is assigned an object containing the log-likelihood for each hypothesis; and
 \item From the log-likelhoods, the confidence level, C.L., for a track having a PID $p$ is calculated and the PID is set to the hypothesis with the the best C.L.
-%\item From the log-likelhoods, the confidence level, $C_x$ for a track having a PID $x$ is calculated by $C_x = {\cal{L}}_x/$\sigma_i \cal{L}_i$);
-%\item The PID of the track is set to the particle hypothesis that gave the best $CL$.
 \end{enumerate}
-
-%If the PID thus determined  matches the PID that the track reconstruction had assigned, then that track along with its PID is considered the correct track and is passed along for final track fitting. Otherwise, the Global PID does not assign a PID to the track and does not return a final track.
-
-%PID will be used for both global alignment during commissioning, and running of Step IV. However, the different requirements of these phases of the experiment necessitate two different sets of PID variables.
-%During Step IV, the requirement for independence between upstream and downstream track reconstruction means that the PID variables used are also separated into two sets, one using the upstream detectors, the other the downstream detectors. 
-
-%The variables included in MAUS are:
-%
-%\vspace {0.5cm}
-%\begin{tabular}{| l | l | p{5cm} |}
-%  \hline                       
-%  PID class & Variable name  & Definition \\
-%  \hline
-%  PIDVarA & diffTOF1TOF0 & Uses the upstream time of flight, between TOF0 and TOF1. This variable is beam dependent and so is best used during offline data analysis where PDFs can be produced for specific beam settings. \\
-%  PIDVarB & diffTOF0TOF1vsTrackerMom & Uses upstream time of flight, and momentum as measured in the upstream Tracker. \\  
-%  PIDVarC & KLChargeProdvsDSTrackerMom & Uses the KL ADC charge product and the momentum measured in the downstream Tracker. \\
-%  \hline 
-%  \end{tabular}
-%  
-%\vspace {0.5cm}
-%The following variables are under development: 
-%\vspace {0.5cm} 
-%  
-%  \begin{tabular}{| l | l | p{5cm} |} 
-%  \hline
-%    PID class & Variable name  & Definition \\
-%  \hline
-%  PIDVarD & KLADCChargeProduct & Uses the KL ADC charge product. This variable is beam dependent, and so is best used during offline data analysis.\\
-%  PIDVarE & EMRRangevsDSTrackerMom & Uses the range of the particle as measured in the EMR, and the momentum measured in the downstream Tracker. \\
-%PIDVarF & EMRPlaneDensityvsDSTrackerMom & Uses the plane hit density in the EMR, and the momentum measured in the downstream Tracker.\\
-%  \hline 
-%\end{tabular}
-%
-%\vspace {0.5cm}
-%For global alignment and commissioning, where there will be no magnetic field, the Trackers will not be able to provide momentum information, and TOF0 cannot be used (as a series of quadrupole magnets sit between TOF0 and TOF1 which will cause an unknown perturbation to the field when not running). However, alignment will use tracks that pass through the length of the cooling channel, and so PID (variables that incorporate both upstream and downstream detectors can be used). The PID variables for use during commissioning are:
-%
-%\vspace {0.5cm}
-%\begin{tabular}{| l | l | p{5cm} |}
-%  \hline                       
-%  PID class & Variable name  & Definition \\
-%  \hline
-%  ComPIDVarA & diffTOF2TOF1 & Uses the time of flight between TOF1 and TOF2. Beam dependent. \\
-%  ComPIDVarB & KLChargeProdvsDiffTOF1TOF2 & Uses the KL ADC charge product, and the time of flight between TOF1 and TOF2. \\
-%  ComPIDVarC & ComKLADCChargeProduct & Uses the KL ADC charge product . Beam dependent.\\
-%  \hline 
-%  \end{tabular}
-%  
-%\vspace {0.5cm}
-%the following variables are under development: 
-%\vspace {0.5cm} 
-%  
-%  \begin{tabular}{| l | l | p{5cm} |} 
-%  \hline
-%    PID class & Variable name  & Definition \\
-%  \hline
-%  PIDVarD & EMRRangevsDiffTOF1TOF2 & Uses the range of the particle as measured in the EMR, and the time of flight between TOF1 and TOF2. \\
-%  PIDVarE & EMRPlaneDensityvsDiffTOF1TOF2 & Uses the plane hit density in the EMR, and the time of flight between TOF1 and TOF2.\\
-%  \hline 
-%\end{tabular}
-%
-%\vspace {0.5cm}
-%Efficiency and purity studies are used to improve the performance of the PID. This is performed on both a variable-by-variable basis, and globally across the variables. The efficiency of the PID is defined as 
-%$eff = $correct PID tracks$/$(MC tracks - unsuitable tracks) whereby an unsuitable track is one that does not fulfill the criteria required to perform PID on it (i.e. missing detector information). The purity of the PID is defined as $p = $ correct PID tracks $/$ tracks assigned a PID.
-
 
 \subsection{Online reconstruction} 
 
-%{\bf DR Note: The online reconstruction framework we used in the MLCR is not in the MAUS distribution. It's a third party framework from Yordan. We should bring it into MAUS if we want to describe it here, or we should leave it out. Comments?)}
-
 During data taking, it is essential to visualize a detector's performance and have diagnostic tools to identify and debug unexpected behavior. This is accomplished through summary histograms of  high and low-level quantities from detectors. The implementation is through a custom multi-threaded application based on a producer--consumer pattern with thread-safe FIFO buffers. Raw data produced by the DAQ are streamed through a network and consumed by individual detector mappers described in Section 3. The reconstructed outputs produced by the mappers,  are in turn consumed by the reducers. The mappers and reducers are distributed among the threads to balance the load. Finally,  outputs from the reducers are written as histogram images. Though the framework for the online reconstruction is based on parallelized processing of spills, the reconstruction modules are the same as those used for offline processing. A lightweight tool based on Django \cite{Django} provides live web-based visualization of the histogram images as and when they are created.
 
-%For online reconstruction, MAUS uses a distributed processing model to enable a scalable reconstruction of the MICE dataset. Raw data is passed to a networked message queue for multiprocessing across multiple CPUs and servers. Reconstructed data is handed to another message queue. Histogramming routines pick data from this second message queue and collate it into histograms, which are written to disk. A web-based visualisation tool enables viewing of the histograms. A production version of the online reconstruction is available. Further development work is underway on the user interface and some of the backend infrastructure. Though the framework for the online reconstruction is based on distributed processing of spills, the reconstruction modules are the same as those used for offline processing. 
-
-
-%??? TODO: Redo re new Yordan framework
 
 \section{Summary}
 
@@ -552,26 +393,5 @@ computing resources deployed and operated by GridPP \cite{GridPP} in the UK.
 
 \bibliography{mice}                                                                           
 \bibliographystyle{unsrt}
-
-
-
-
-%\begin{thebibliography}{99}
-%\bibliographystyle{unsrt}
-
-% 
-% \bibitem{cite:mice} G.~Gregoire et al., \emph{Proposal to the Rutherford Appleton Laboratory: An International Muon Ionization Cooling Experiment (MICE)}, \textbf{Tech. rep. (2003)} http://mice.iit.edu/micenotes/public/pdf/ MICE0021/MICE0021.pdf
-% \bibitem{cite:nufact} Geer S 2009 ``Muon Colliders and Neutrino Factories,'' \textit{Ann. Rev. Nucl. Part. Sci.} \textbf{59} 345 � 367.
-% \bibitem{cite:launchpad} http://launchpad.net
-% \bibitem{cite:bazaar} http://bazaar.canonical.com/
-% \bibitem{cite:gridpp} http://www.gridpp.ac.uk/
-% \bibitem{cite:maus} C.D.~Tunnell and C.T.~Rogers, \emph{MAUS: MICE Analysis User Software, IPAC (2011)}; http://micewww.pp.rl.ac.uk/projects/maus
-% \bibitem{cite:jenkins} http://jenkins-ci.org
-% \bibitem{cite:g4bl} http://g4beamline.muonsinc.com
-% \bibitem{cite:icool} R.C.~Fernow, \emph{ICOOL: A simulation code for ionization cooling of muon beams}, \emph{Proc. 1999 Particle Accelerator Conference, New York (1999)}. 
-% \bibitem{cite:geant4} S.~Agostinelli, et al., {\emph{GEANT4 - A Simulation Toolkit}, Nucl. Instrum. Meth. A \textbf{506} (2003) 250-303}
-% \bibitem{cite:json} http://json.org
-% \bibitem{cite:root} R.~Brun and F.~Rademakers, {\emph{ROOT - An Object Oriented Data Analysis Framework}, Nucl. Instr. Meth. A \textbf{389}, 81-86 (1997)}
-%\end{thebibliography}
 
 \end{document}
